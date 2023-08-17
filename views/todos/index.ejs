@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express To-Do</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+    <a href="/">Home</a>
+    <h1>All To-Dos</h1>
+    <h3>To-Dos as of <%= time %></h3>
+    <ul>
+      <% todos.forEach(function(t) { %>
+        <li>
+          <a href="/todos/<%= t.id %>"><%= t.todo %></a>
+            - 
+          <%= t.done ? 'done' : 'not done' %>
+        </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
